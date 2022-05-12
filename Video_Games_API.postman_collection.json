@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "a01e21f0-7444-4468-9d6a-ddef9eaf37aa",
+		"name": "Video_Games_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get_All_Video_Games",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7260/api/games",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7260",
+					"path": [
+						"api",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Games_By_Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7260/api/games/16",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7260",
+					"path": [
+						"api",
+						"games",
+						"16"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
