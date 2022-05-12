@@ -7,19 +7,22 @@ function App() {
 
   const [games, setGames] = useState([])
 
-  const getGames = async() => {
+  async function getGames(){
     let request = await axios.get("https://localhost:7260/api/games")
     setGames(request.data)
   }
 
   useEffect(() => {
-    getGames()
+    getGames();
   }, [])
 
   return (
-    <div className="App">
+    <div>
       <SearchBar />
-
+      {games.map((el) => 
+      {
+        return (<div>{el.name}</div>)
+      })}
     </div>
   );
 }
