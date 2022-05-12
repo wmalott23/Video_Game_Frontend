@@ -20,32 +20,48 @@ export const options = {
 function App() {
 
   const [games, setGames] = useState([])
+  const [consoles, setConsoles] = useState([])
+  const [consoleGamesSold, setConsoleGamesSold] = useState([])
 
   async function getGames(){
     let request = await axios.get("https://localhost:7260/api/games/")
     setGames(request.data)
   }
 
+  const getConsoleGamesSold = () => {
+    let console = games.map(function(el){
+      return el.platform
+    })
+    let gameArray = [];
+    let results = console.filter(function(el){
+      if(!gameArray.includes(el)){
+        gameArray.push(el)
+      }})
+      setConsoles(results);
+  }
+
   useEffect(() => {
     getGames();
-  }, [])
+    getConsoleGamesSold();
+    console.log(consoles)
+  }, [consoles])
 
   
 
   return (
     <div>
       <SearchBar />
-      <Chart
+      {/* <Chart
       chartType="BarChart"
       width="100%"
       height="400px"
       data={data}
       options={options}
-    />
-      {games.map((el) => 
+    /> */}
+      {/* {games.map((el) => 
       {
         return (<div>{el.name}</div>)
-      })}
+      })} */}
     </div>
   );
 }
