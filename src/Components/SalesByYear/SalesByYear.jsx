@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Chart } from 'react-google-charts';
 
-const ConsolesByYear = ({games}) => {
+const SalesByYear = ({games}) => {
 
     function generateChartData() {
         let years = games.map(g => g.year)
@@ -35,4 +35,4 @@ const ConsolesByYear = ({games}) => {
      );
 }
  
-export default ConsolesByYear;
+export default SalesByYear;

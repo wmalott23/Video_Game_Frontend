@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import GamesByPlatform from './Components/GamesByPlatform/GamesByPlatform';
 import GameDetails from './Components/GameDetails/GameDetails';
-import ConsolesByYear from './Components/ConsolesByYear/ConsolesByYear';
+import SalesByYear from './Components/SalesByYear/SalesByYear';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -30,7 +30,7 @@ function App() {
 
       <GamesByPlatform games={games}/>
       <GameDetails games={games}/>
-      <ConsolesByYear games={games}/>
+      <SalesByYear games={games}/>
     </div>
   );
 }
