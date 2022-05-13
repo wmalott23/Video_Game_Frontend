@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import { Chart } from "react-google-charts"
+import GameGraphDetails from '../GameGraphDetails/GameGraphDetails';
 
 const GameDetails = ({games}) => {
 
@@ -35,6 +36,7 @@ const GameDetails = ({games}) => {
             height="400px"
             data={data}
             />
+            <GameGraphDetails />
         </div>
      );
 }
