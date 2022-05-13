@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchBar from './Components/SearchBar/SearchBar';
 import GamesByPlatform from './Components/GamesByPlatform/GamesByPlatform';
+import GameDetails from './Components/GameDetails/GameDetails';
 import { Chart } from 'react-google-charts';
 //import './App.css';
 
@@ -15,10 +16,6 @@ function App() {
     setGames(request.data)
   }
 
-  async function searchGames() {
-
-  }
-
   useEffect(() => {
     getGames();
     // console game copies sold since 2013 chart
@@ -29,11 +26,8 @@ function App() {
   return (
     <div>
       <SearchBar games={games} setSearch={setSearch}/>
-      <GamesByPlatform games={games} />
-      {/* {games.map((el) => 
-      {
-        return (<div>{el.name}</div>)
-      })} */}
+      <GamesByPlatform games={games}/>
+      <GameDetails search={search} games={games}/>
     </div>
   );
 }
