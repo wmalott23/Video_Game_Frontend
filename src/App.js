@@ -4,6 +4,9 @@ import SearchBar from './Components/SearchBar/SearchBar';
 import GamesByPlatform from './Components/GamesByPlatform/GamesByPlatform';
 import GameDetails from './Components/GameDetails/GameDetails';
 import { Chart } from 'react-google-charts';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 //import './App.css';
 
 function App() {

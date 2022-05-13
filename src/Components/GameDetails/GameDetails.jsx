@@ -12,7 +12,8 @@ const GameDetails = ({games}) => {
         const gamesList = games.filter(g => g.name.toLowerCase().includes(search))
 
         let gamesTable = gamesList.map(g => {
-            return ([g.id, g.name, g.year, g.genre, 
+            return (
+                [g.id, g.name, g.year, g.genre, 
                 g.platform, g.publisher, g.rank, 
                 g.globalSales, g.northAmericaSales, g.europeSales, g.japanSales, g.otherSales]
                 )})
@@ -24,7 +25,6 @@ const GameDetails = ({games}) => {
         // console.log(tableData)
         setData(tableData)
     },[search])
-
     
     
     return ( 
@@ -34,9 +34,8 @@ const GameDetails = ({games}) => {
             chartType="Table"
             width="100%"
             height="400px"
-            data={data}
-            />
-            <GameGraphDetails />
+            data={data}/>
+            <GameGraphDetails games={games}/>
         </div>
      );
 }
