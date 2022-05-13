@@ -9,7 +9,7 @@ import { Chart } from 'react-google-charts';
 function App() {
 
   const [games, setGames] = useState([])
-  const [search, setSearch] = useState([])
+  
 
   async function getGames(){
     let request = await axios.get("https://localhost:7260/api/games/")
@@ -25,9 +25,9 @@ function App() {
 
   return (
     <div>
-      <SearchBar games={games} setSearch={setSearch}/>
+
       <GamesByPlatform games={games}/>
-      <GameDetails search={search} games={games}/>
+      <GameDetails games={games}/>
     </div>
   );
 }

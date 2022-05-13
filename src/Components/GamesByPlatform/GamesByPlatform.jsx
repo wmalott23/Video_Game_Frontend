@@ -14,9 +14,8 @@ const GamesByPlatform = ({games}) => {
         let platformArrays = distictPlatforms.map(p => {
             
             let allGamePlatforms = filteredByGT2013.filter(g => g.platform === p)
-            console.log(allGamePlatforms)
+
             let gamesByGlobal = allGamePlatforms.map(g => g.globalSales)
-            console.log(gamesByGlobal)
             
             let gamesSales = gamesByGlobal.reduce((total, el) => total + el)
 
