@@ -1,13 +1,34 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
+import { Chart } from 'react-google-charts';
 
 
 const GameGraphDetails = ({games}) => {
 
     const [value, setValue] = useState(0)
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false)
+
+    const getGameDataForChart = () => {
+        let game = games.filter(g => g.id == value)
+        console.log(game)
+        let filteredGames = games.filter(g => g.name == game.name)
+        console.log(filteredGames)
+
+        let gamesTable = filteredGames.map(g => {
+            return (
+                [g.platform, g.globalSales]
+            )})
+
+        const data = [
+            ["Platform", "Sales(in millions)"],
+            ...gamesTable
+        ]
+        return data
+    }
+
     const handleClose = () => setShow(false);
-    const handleShow = () => {
+    const handleShow = (e) => {
+        e.preventDefault()
         setShow(true);
     }
 
@@ -22,11 +43,15 @@ const GameGraphDetails = ({games}) => {
                 </button>
             </form>
             <Modal show={show} onHide={handleClose}>
-
-
-                    <Modal.Body>
-                            <button className="btn bg-success align-self-center text-white m-1" onClick={handleClose}>Close</button> 
-                    </Modal.Body>
+                <Modal.Body>
+                    <Chart
+                        chartType="ColumnChart"
+                        width="100%"
+                        height="400px"
+                        data={getGameDataForChart()}
+                    />
+                        <button className="btn bg-success align-self-center text-white m-1" onClick={handleClose}>Close</button> 
+                </Modal.Body>
             </Modal>
         </div>
      );
