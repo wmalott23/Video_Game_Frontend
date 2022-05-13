@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import SearchBar from './Components/SearchBar/SearchBar';
 import GamesByPlatform from './Components/GamesByPlatform/GamesByPlatform';
 import GameDetails from './Components/GameDetails/GameDetails';
-import { Chart } from 'react-google-charts';
+import ConsolesByYear from './Components/ConsolesByYear/ConsolesByYear';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -31,6 +30,7 @@ function App() {
 
       <GamesByPlatform games={games}/>
       <GameDetails games={games}/>
+      <ConsolesByYear games={games}/>
     </div>
   );
 }
