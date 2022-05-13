@@ -25,6 +25,8 @@ Project total: /75
 (10 points) As a video game enthusiast, I want to be able to search for a game and see a data visualization (chart or graph) of the number of copies sold per console.
 
 (5 points) As a developer, I want to write a sample evaluation question of my own that can be answered by analysis of the API data.
+possible: most successfull year according to total sales 
+possible: display total sales each year of games (x amount of sales in 2013, y amt in 2014, etc)
 
 (10 points) As a video game enthusiast, I want to see a data visualization of the analyzed data regarding the developer created sample evaluation question.
 
