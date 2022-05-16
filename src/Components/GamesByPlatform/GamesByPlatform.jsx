@@ -22,7 +22,7 @@ const GamesByPlatform = ({games}) => {
     }
         return ( 
             <div>
-                <h2>Video Game Sales According to Platform</h2>
+                <h2 style={{textAlign: "center", marginTop: "5px"}}>Video Game Sales According to Platform</h2>
                 <Chart
                 chartType="ColumnChart"
                 width="100%"

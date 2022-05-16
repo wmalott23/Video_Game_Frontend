@@ -4,6 +4,7 @@ import GamesByPlatform from './Components/GamesByPlatform/GamesByPlatform';
 import GameDetails from './Components/GameDetails/GameDetails';
 import SalesByYear from './Components/SalesByYear/SalesByYear';
 import ConsolesByPublisher from './Components/ConsolesByPublisher/ConsolesByPublisher';
+import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -23,7 +24,7 @@ function App() {
   
 
   return (
-    <div>
+    <div className='App'>
       <GamesByPlatform games={games}/>
       <GameDetails games={games}/>
       <SalesByYear games={games}/>

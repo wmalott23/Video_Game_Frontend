@@ -1,5 +1,6 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
+import "./ConsolesByPublisher.css";
 
 const ConsolesByPublisher = ({games}) => {
 
@@ -27,14 +28,30 @@ const ConsolesByPublisher = ({games}) => {
         ];
         return data
     }
+
+    const options = {
+        isStacked: true,
+        hAxis: {
+            textStyle: {
+                fontSize: 10
+            }
+        },
+        chartArea: {
+            left: 0,
+            width: "100%"
+        }
+
+    }
+
     return ( 
-        <div>
-            <h2>Publisher's Sales per Console</h2>
+        <div className='pub-sales'>
+            <h2 style={{textAlign: "center"}}>Publisher's Sales per Console</h2>
             <Chart
             chartType="ColumnChart"
-            width="100%"
+            width="400%"
             height="400px"
             data={generateChartData()}
+            options={options}
             />
         </div>
      );

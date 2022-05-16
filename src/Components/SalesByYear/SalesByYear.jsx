@@ -20,7 +20,7 @@ const SalesByYear = ({games}) => {
     }
     return ( 
         <div>
-            <h2>Sales by Year</h2>
+            <h2 style={{textAlign: "center"}}>Sales by Year</h2>
             <Chart
             chartType="ColumnChart"
             width="100%"
