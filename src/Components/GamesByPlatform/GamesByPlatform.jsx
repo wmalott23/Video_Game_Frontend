@@ -22,13 +22,14 @@ const GamesByPlatform = ({games}) => {
     }
         return ( 
             <div>
-            <Chart
-            chartType="ColumnChart"
-            width="100%"
-            height="400px"
-            data={generateChartData()}
-            />
-        </div>
+                <h2>Video Game Sales According to Platform</h2>
+                <Chart
+                chartType="ColumnChart"
+                width="100%"
+                height="400px"
+                data={generateChartData()}
+                />
+            </div>
      );
 }
  

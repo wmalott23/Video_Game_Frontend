@@ -29,6 +29,7 @@ const ConsolesByPublisher = ({games}) => {
     }
     return ( 
         <div>
+            <h2>Publisher's Sales per Console</h2>
             <Chart
             chartType="ColumnChart"
             width="100%"

@@ -30,7 +30,7 @@ const GameGraphDetails = ({games}) => {
     return ( 
         <div>
             <form onSubmit={handleShow}>
-                <input placeholder='Please enter the name of the game that you would like to see graph details of' onChange={(event) => setValue(event.target.value)}>    
+                <input placeholder='Name of the game' onChange={(event) => setValue(event.target.value)}>    
                 </input>
                 <button variant="secondary">
                     Open
