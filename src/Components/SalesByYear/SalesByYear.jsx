@@ -6,7 +6,6 @@ const SalesByYear = ({games}) => {
     function generateChartData() {
         let years = games.map(g => g.year)
         let distinctYears = [...new Set(years)]
-
         let salesByYear = distinctYears.map(y=>{
             let filteredGames = games.filter(g => g.year == y)
             let gameSales = filteredGames.map(g => g.globalSales)
@@ -19,9 +18,6 @@ const SalesByYear = ({games}) => {
         ];
         return data   
     }
-
-
-
     return ( 
         <div>
             <Chart
@@ -31,7 +27,6 @@ const SalesByYear = ({games}) => {
             data={generateChartData()}
             />
         </div>
-
      );
 }
  

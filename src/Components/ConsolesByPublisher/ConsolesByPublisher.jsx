@@ -6,11 +6,8 @@ const ConsolesByPublisher = ({games}) => {
     function generateChartData(){
         let publishers = games.map(g => g.publisher)
         let distinctPublishers = [...new Set(publishers)]
-        console.log(distinctPublishers)
-
         let consoles = games.map(g => g.platform)
         let distinctConsoles = [...new Set(consoles)]
-
         let consolesByPubs = distinctPublishers.map(p => {
             let consolesByPub = distinctConsoles.map(c => {
                 let filteredPubs = games.filter(g => g.publisher == p)
@@ -24,16 +21,12 @@ const ConsolesByPublisher = ({games}) => {
             })
             return [p, ...consolesByPub]
         })
-
         const data = [
             ["Publisher", 'DS', 'X360', 'PS3', 'Wii', 'GBA', 'PS2', 'PS', 'SNES', 'NES', 'GB', '3DS', 'PS4', 'N64', 'XB', 'PC', 'XOne', 'WiiU', '2600', 'GC', 'PSP', 'GEN', 'DC', 'PSV', 'SAT', 'SCD', 'WS', 'NG', 'TG16', '3DO', 'GG', 'PCFX'],
             ...consolesByPubs
         ];
         return data
     }
-
-
-
     return ( 
         <div>
             <Chart

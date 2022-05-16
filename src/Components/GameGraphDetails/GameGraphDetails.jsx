@@ -7,7 +7,6 @@ const GameGraphDetails = ({games}) => {
 
     const [value, setValue] = useState(0)
     const [show, setShow] = useState(false)
-
     const getGameDataForChart = () => {
         let filteredGames = games.filter(g => g.name.toLowerCase().includes(value))
         console.log(filteredGames)
@@ -17,25 +16,21 @@ const GameGraphDetails = ({games}) => {
             return (
                 [namePlatform, g.globalSales]
             )})
-
         const data = [
             ["Platform", "Sales(in millions)"],
             ...gamesTable
         ]
         return data
     }
-
     const handleClose = () => setShow(false);
     const handleShow = (e) => {
         e.preventDefault()
         setShow(true);
     }
-
     return ( 
         <div>
             <form onSubmit={handleShow}>
-                <input placeholder='Please enter the name of the game that you would like to see graph details of' onChange={(event) => setValue(event.target.value)}>
-                    
+                <input placeholder='Please enter the name of the game that you would like to see graph details of' onChange={(event) => setValue(event.target.value)}>    
                 </input>
                 <button variant="secondary">
                     Open

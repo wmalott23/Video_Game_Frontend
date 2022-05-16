@@ -12,23 +12,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   const [games, setGames] = useState([])
-  
-
   async function getGames(){
     let request = await axios.get("https://localhost:7260/api/games/")
     setGames(request.data)
   }
-
   useEffect(() => {
     getGames();
-    // console game copies sold since 2013 chart
   }, [])
 
   
 
   return (
     <div>
-
       <GamesByPlatform games={games}/>
       <GameDetails games={games}/>
       <SalesByYear games={games}/>
