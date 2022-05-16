@@ -10,8 +10,8 @@ const SearchBar = (props) => {
     }
     return ( 
         <form onSubmit={handleSearch}>
-            <input value={searchTerm} type="text" placeholder="Search for a game" onChange={(event) => setSearchTerm(event.target.value)}/>
-            <button>Search</button>
+            <input className="rounded" value={searchTerm} type="text" placeholder="Search for a game" onChange={(event) => setSearchTerm(event.target.value)}/>
+            <button className="bg-primary text-white rounded">Search</button>
         </form>
      );
 }

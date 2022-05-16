@@ -24,7 +24,7 @@ function App() {
   
 
   return (
-    <div className='App'>
+    <div className='App col-md-11 d-flex flex-column justify-content center'>
       <GamesByPlatform games={games}/>
       <GameDetails games={games}/>
       <SalesByYear games={games}/>

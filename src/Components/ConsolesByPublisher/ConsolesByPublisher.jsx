@@ -37,19 +37,18 @@ const ConsolesByPublisher = ({games}) => {
             }
         },
         chartArea: {
-            left: 0,
-            width: "100%"
+            left: "1%",
         }
 
     }
 
     return ( 
-        <div className='pub-sales'>
+        <div className='pub-sales m-1 border border-dark rounded'>
             <h2 style={{textAlign: "center"}}>Publisher's Sales per Console</h2>
             <Chart
             chartType="ColumnChart"
             width="400%"
-            height="400px"
+            height="600px"
             data={generateChartData()}
             options={options}
             />

@@ -30,10 +30,10 @@ const GameGraphDetails = ({games}) => {
     return ( 
         <div>
             <form onSubmit={handleShow}>
-                <input placeholder='Name of the game' onChange={(event) => setValue(event.target.value)}>    
+                <input className="rounded" placeholder='Name of the game' onChange={(event) => setValue(event.target.value)}>    
                 </input>
-                <button variant="secondary">
-                    Open
+                <button className="bg-success text-white rounded">
+                    Display
                 </button>
             </form>
             <Modal show={show} onHide={handleClose}>
@@ -44,7 +44,7 @@ const GameGraphDetails = ({games}) => {
                         height="400px"
                         data={getGameDataForChart()}
                     />
-                        <button className="btn bg-success align-self-center text-white m-1" onClick={handleClose}>Close</button> 
+                        <button className="btn bg-danger text-white m-1" onClick={handleClose}>Close</button> 
                 </Modal.Body>
             </Modal>
         </div>
