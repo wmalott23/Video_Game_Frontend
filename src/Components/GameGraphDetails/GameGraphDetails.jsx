@@ -36,15 +36,16 @@ const GameGraphDetails = ({games}) => {
                     Display
                 </button>
             </form>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Body>
+            <Modal size='lg' show={show} onHide={handleClose}>
+                <Modal.Body className='d-flex flex-column justify-content-center'>
+                    <h2 style={{textAlign: "center"}}>Game Details</h2>
                     <Chart
                         chartType="ColumnChart"
                         width="100%"
                         height="400px"
                         data={getGameDataForChart()}
                     />
-                        <button className="btn bg-danger text-white m-1" onClick={handleClose}>Close</button> 
+                        <button className="btn bg-danger text-dark m-1 border border-white rounded" onClick={handleClose}>Close</button> 
                 </Modal.Body>
             </Modal>
         </div>
